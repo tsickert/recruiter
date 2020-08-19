@@ -1,0 +1,16 @@
+name: Recruiter
+
+on:
+  workflow_dispatch:
+#   schedule:
+#     - cron: '0 18 * * 1,3,5'
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v1.0.1
+      with:
+        webhook-url: ${{ secrets.WEBHOOK_URL }}
+        content: "Mia Familia! Come play!"
